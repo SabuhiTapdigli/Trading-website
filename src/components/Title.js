@@ -11,13 +11,14 @@ const Title = ({title,parag,Contact,firsturl}) => {
     const GaEventTracker = useGaEventTracker('Title check button')
     const today = new Date(),
     date = today.getDate() + ' ' + today.toLocaleString('en-us', { month: 'short' }) + ', ' + today.getFullYear();
+    let time = today.toLocaleString('en-us', { month: 'short' }) + ' ' + today.getFullYear();
     const gclid = sessionStorage.getItem('gclid')
     return (
             <BgWrapper>
                 <Container>
                     <Headerwrapper>
                         <Currentime><div><span><img src = {tick} alt = {'tick'} height='16' width ='16'/></span> Last Updated {date}</div></Currentime>
-                        <TitleHeader>{title}</TitleHeader>
+                        <TitleHeader>{title} - {time}</TitleHeader>
                         <TtileContent>
                         <div dangerouslySetInnerHTML={{__html: parag}}/>
                         </TtileContent>

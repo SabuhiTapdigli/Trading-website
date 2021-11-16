@@ -37,7 +37,7 @@ const Burgermenu = styled.div`
         border-radius:10px;
         transform-origin:3px;
         transition: all 0.3s linear;
-        background-color:${({Nav})=> Nav ? 'white' : 'black'};
+        background-color:${({Nav})=> Nav ? 'white' : 'white'};
         &:nth-child(1){
             transform: ${({Nav})=> Nav ? 'rotate(45deg)':'rotate(0)'}
         }

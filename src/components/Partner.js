@@ -12,6 +12,7 @@ const Partner = ({item,isReview}) =>{
     const gclid = sessionStorage.getItem('gclid')
     const itemurl = item.url+gclid
     const GaEventTracker = useGaEventTracker('Partner links')
+    
     return(
         <Partnerwrapper key = {item.id}>
                 <Partnercol>
@@ -23,17 +24,13 @@ const Partner = ({item,isReview}) =>{
             <PartnerContent >
                 {/* <h1>{item.partnerName}</h1> */}
                 {/* <p>{item.bonus}</p> */}
-                
                 <PartnerWhatwelike>
-                    
                     {item.whatwelike.map((i)=>{
                         return(<li key={i.id}><img src ={check} alt ={'check'} width="12" height="12"/>{i.name}</li>)
                     })}
                 </PartnerWhatwelike>
-                
-                
-                
-                
+               
+
             </PartnerContent>
             <PartnerRating className =  {isReview ? 'review' : null}>
                 {/* {isReview ? null : 
@@ -41,8 +38,7 @@ const Partner = ({item,isReview}) =>{
                 }
                 {isReview ? null : 
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
-                } */}
-                
+                } */} 
                 <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}><VisitButton> Visit Site  {'>>'}</VisitButton></a>
                 {/* <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview> */}
             </PartnerRating>
@@ -68,7 +64,7 @@ const Partnerwrapper = styled.div`
     justify-content:space-between;
     // align-items:center;
     flex:0.8;
-    height: 220px;
+    // height: 220px;
     border-radius: 8px;
     background-color: #FFFFFF;
     box-shadow: 0 0 40px 0 rgba(0,0,0,0.12);
@@ -121,9 +117,25 @@ const PartnerContent = styled.div`
         }
         width : 100%;
         text-align:center;
+        justify-content:center;
     }
 `
-
+const WhatwelikeMobile= styled.ul`
+    color: #2B292D;
+    list-style:none;
+    display:none;
+    li{
+        padding: 2px 0;
+        font-size: 16px;
+        font-weight: 300;
+    }
+    img{
+        margin-right:10px;
+    }
+    @media(max-width:992px){
+        display:block;
+    }
+`
 const PartnerWhatwelike = styled.ul`
     color: #2B292D;
     list-style:none;
@@ -137,7 +149,13 @@ const PartnerWhatwelike = styled.ul`
         margin-right:10px;
     }
     @media(max-width:992px){
-        display:none;
+        display:block;
+        li:not(:first-child) {
+            display:none;
+        }
+        li{
+            padding: 10px 0;
+        }
     }
     
 `
@@ -151,7 +169,8 @@ const PartnerRating = styled.div`
     // padding:10px;
     
     @media(max-width:992px){
-        width:100%
+        width:100%;
+        justify-content:center;
     }
 
     
