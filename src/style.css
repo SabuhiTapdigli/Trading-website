@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Avenir';
+}
+.review{
+    align-self: center;
+}
+.footer-lists{
+    padding-left: 50px;
+}
+.banner {
+    background-image: url('./img/capital.png');
+    background-size: contain;
+  }
+/* 
+.banner.shared-hosting {
+    background-image: url('./img/hostgator.svg');
+}
+.banner.wordpress-hosting {
+    background-image: url('./img/hostgator.svg');
+}
+.banner.Vps {
+    background-image: url('./img/kamatera.svg');
+} */
+
+/* .banner.Vps {
+    background-image: url('./img/interserver.svg');
+} */
+
+
+@media(max-width:992px){
+    .active{
+        background-color: #2E2241;
+    }
+}
