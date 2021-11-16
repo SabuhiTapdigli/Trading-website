@@ -7,7 +7,7 @@ import Footercontent from '../Footercontent'
 import useApi from '../../hooks/useApi'
 const Stock = () =>{
     const datas = useApi('Api/Shared/');
-    const title = 'Title: Top 10 Best Stock Trading Brokers In UK ';
+    const title = 'Title: Top 10 Best Stock Trading Brokers In UK';
     const parag = `<h3>We listed the best stock brokers in the market</h3><br>
                     <ul>
                     <li>High-quality trading platform and tools</li>
