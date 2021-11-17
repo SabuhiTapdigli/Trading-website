@@ -1,12 +1,13 @@
 import React from 'react'
 import check from '../img/check.svg';
+import {NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import Star from './Star';
 import useGaEventTracker from '../hooks/useGaEventTracker';
 
 
 const Partner = ({item,isReview}) =>{
-    const imgUrl = '../img/';
+    const imgUrl = '../img/logos/';
     const gclid = sessionStorage.getItem('gclid')
     const itemurl = item.url+gclid
     const GaEventTracker = useGaEventTracker('Partner links')
@@ -38,7 +39,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 } */} 
                 <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}><VisitButton> Visit Site  {'>>'}</VisitButton></a>
-                {/* <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview> */}
+                <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
     )
@@ -162,8 +163,9 @@ const PartnerRating = styled.div`
     // text-align:center;
     margin-right:20px;
     display:flex;
-    justify-content:space-between;
+    justify-content:flex-end;
     align-items:center;
+    flex-direction:column;
     // padding:10px;
     
     @media(max-width:992px){

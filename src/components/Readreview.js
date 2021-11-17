@@ -8,21 +8,28 @@ import { useParams } from 'react-router-dom';
 
 
 const Reviewreview  = ({datas}) =>{
+    const title = 'Top 10 Best Online Trading Brokers';
+    const parag = `<h3>We listed the best trading brokers in the market</h3><br>
+                    <ul>
+                    <li>High-quality trading platform and tools</li>
+                    <li>Excellent customer service</li>
+                    <li>No hidden fees</li>
+                    </ul>`
     const firsturl = datas.items[0];
     const {name} = useParams()
    
     return(
         <Container>
-            <Title/>
+            <Title title = {title} parag = {parag}/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{
                         if(item.partnerName === name){
                             return(
-                                <div>
+                                <ReviewContent>
                                     <Partner key = {item.id} item = {item} className='partner'/>
                                     <div dangerouslySetInnerHTML={{__html: item.review}}/>
-                                </div>)
+                                </ReviewContent>)
                         }
                         return(null)
                     })}
@@ -51,7 +58,7 @@ const Mainbody = styled.div`
 `
 const MainSection = styled.div`
     display:flex;
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
     justify-content:space-between;
     padding: 0 20px;
@@ -61,5 +68,10 @@ const MainSection = styled.div`
     @media(max-width:992px){
         margin-top:20px;
     }
+`
+const ReviewContent= styled.div`
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 0px 40px 0px;
+    padding: 20px;
 `
 export default Reviewreview

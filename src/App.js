@@ -13,7 +13,7 @@ const Forex = React.lazy(()=> import ('./components/pages/Forex'))
 const CFDs = React.lazy(()=> import ('./components/pages/CFDs'))
 const Options = React.lazy(()=> import ('./components/pages/Options'))
 const Spread = React.lazy(()=> import ('./components/pages/Spread'))
-// const Readreview  = React.lazy(()=> import( './components/Readreview'));
+const Readreview  = React.lazy(()=> import( './components/Readreview'));
 // const ReadArticle = React.lazy(()=> import( './components/ReadArticle'));
 // const Contact = React.lazy(()=> import( './components/Contact'));
 // const Review = React.lazy(()=> import(  './components/Review'));
@@ -56,10 +56,10 @@ const App = () =>{
                 <Header/>
                 <Switch>
                     
-                    {/* <Route path = '/review/:name'>
+                    <Route path = '/review/:name'>
                         <Readreview datas = {datas} />
                     </Route>
-                    <Route path = "/reviews">
+                   {/*  <Route path = "/reviews">
                         <Review datas={datas}/>
                     </Route>
                     <Route path = '/articles'>
