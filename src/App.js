@@ -21,7 +21,7 @@ const Spread = React.lazy(()=> import ('./components/pages/Spread'))
 // const About = React.lazy(()=> import( './components/About'));
 
 const App = () =>{
-    const datas = useApi('online-casino');
+    const datas = useApi('online-brokers');
     // console.log(datas.items[0])
     // Google Analytic
     useEffect(()=>{
@@ -86,7 +86,7 @@ const App = () =>{
                     <Route path = "/Options">
                         <Options/>
                     </Route>
-                    <Route path = "/spreads">
+                    <Route path = "/spread">
                         <Spread/>
                     </Route>
                     <Route path = "/">

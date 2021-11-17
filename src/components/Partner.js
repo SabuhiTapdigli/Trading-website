@@ -1,7 +1,5 @@
 import React from 'react'
-import top from '../img/top.svg';
 import check from '../img/check.svg';
-import {NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import Star from './Star';
 import useGaEventTracker from '../hooks/useGaEventTracker';
@@ -63,7 +61,7 @@ const Partnerwrapper = styled.div`
     display:flex;
     justify-content:space-between;
     // align-items:center;
-    flex:0.8;
+    // flex:0.8;
     // height: 220px;
     border-radius: 8px;
     background-color: #FFFFFF;
