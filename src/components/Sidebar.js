@@ -5,6 +5,8 @@ import eye from '../img/eye.svg'
 import Toparticles from './Toparticles';
 import {Link,useLocation} from 'react-router-dom'
 import useGaEventTracker from '../hooks/useGaEventTracker';
+import Visitorcount from './visitor-count/Visitorcount';
+
 const Sidebar = ({articles,firsturl}) =>{
     // const imgUrl = '../img/logos/';
     const GaEventTracker = useGaEventTracker('Sidebar link')
@@ -12,15 +14,19 @@ const Sidebar = ({articles,firsturl}) =>{
     // for img
     const path = useLocation().pathname;
     const location = path.split("/")[1];
+   
     return(
         <SidebarContainer>
             <Sidebartop>
                 <span>350,060 + </span>
+                {/* <Visitorcount/> */}
                 <div>
                 <p>Visited website today</p> <span><img src = {eye} alt = {'eye'} width="73" height="73"/></span>
                 </div>
             </Sidebartop>
-            <Sidebarbottom className={"banner " + location} href={`${firsturl && firsturl.url+gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url+gclid)}>
+            <Sidebarbottom style={{backgroundImage: `url(../img/${firsturl && firsturl.partnerName}.png)`}} 
+            href={`${firsturl && firsturl.url+gclid}`} target='_blank' rel="noreferrer"
+             onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url+gclid)}>
             </Sidebarbottom>
             {/* <Allarticles>
                 <h2>Must Reads</h2>
@@ -85,6 +91,7 @@ const Sidebartop = styled.div`
 `
 
 const Sidebarbottom = styled.a`
+background-size: contain;
 border: 1px solid rgba(2,23,34,0.08);
 border-radius: 5px;
 background-color: #F3F3F3;

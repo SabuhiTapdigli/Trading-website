@@ -33,7 +33,7 @@ const Title = ({title,parag,Contact,firsturl}) => {
 const BgWrapper = styled.div`
     // background-image: url(${bg});
     background-color:#f8f8fb;
-    height:450px;
+    // height:450px;
     background-size:cover;
     @media(max-width:992px){
         height: 180px;
@@ -41,7 +41,15 @@ const BgWrapper = styled.div`
     
 `
 const Flagicon = styled.div`
-
+    img{
+        height:160px
+    }
+    @media(max-width:992px){
+        img{height: 120px;}
+    }
+    @media(max-width:600px){
+        img{height: 80px;}
+    }
 `
 
 const Container = styled.div`
@@ -86,6 +94,9 @@ const TitleHeader = styled.h1`
     padding:10px 0;
     @media(max-width:992px){
         font-size: 18px;
+    }
+    @media(max-width:600px){
+        font-size: 14px;
     }
 `
 const TtileContent = styled.div`
