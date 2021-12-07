@@ -7,8 +7,8 @@ import Footercontent from '../Footercontent'
 import useApi from '../../hooks/useApi'
 const Forex = () =>{
     const datas = useApi('/forex/');
-    const title = 'Top 10 Best Forex Trading Brokers In UK';
-    const parag = `<h3>We listed the best forex brokers in the market</h3><br>
+    const title = 'Top 10 Best Forex and CFD Trading Brokers In UK';
+    const parag = `<h3>We listed the Best Forex and CFD brokers in the market</h3><br>
                     <ul>
                     <li>High-quality trading platform and tools</li>
                     <li>Excellent customer service</li>

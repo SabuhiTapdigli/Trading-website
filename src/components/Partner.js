@@ -39,6 +39,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 } */} 
                 <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}><VisitButton> Visit Site  {'>>'}</VisitButton></a>
+                {item.partnerName ==='plus500' ? <Note>72% of retail CFD accounts lose money</Note> : null}
                 <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
@@ -236,5 +237,8 @@ const ReadReview = styled.div`
         line-height: 10px;
         text-align: center;
     }
+`
+const Note = styled.span`
+    font-size:9px;
 `
 export default Partner
