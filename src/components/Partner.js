@@ -25,7 +25,7 @@ const Partner = ({item,isReview}) =>{
                 {/* <p>{item.bonus}</p> */}
                 <PartnerWhatwelike>
                     {item.whatwelike.map((i)=>{
-                        return(<li key={i.id}><img src ={check} alt ={'check'} width="12" height="12"/>{i.name}</li>)
+                        return(<li key={i.id}>{i.name}</li>)
                     })}
                 </PartnerWhatwelike>
                
@@ -39,7 +39,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 } */} 
                 <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}><VisitButton> Visit Site  {'>>'}</VisitButton></a>
-                {item.partnerName ==='plus500' ? <Note>72% of retail CFD accounts lose money</Note> : null}
+                <Note>{item.partnerWebsite}</Note> 
                 <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
@@ -138,7 +138,7 @@ const WhatwelikeMobile= styled.ul`
 `
 const PartnerWhatwelike = styled.ul`
     color: #2B292D;
-    list-style:none;
+    list-style:url(${check});
     
     li{
         padding: 2px 0;
