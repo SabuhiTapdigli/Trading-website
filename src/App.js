@@ -24,11 +24,11 @@ const App = () =>{
     const datas = useApi('online-brokers');
     // console.log(datas.items[0])
     // Google Analytic
-    useEffect(()=>{
-        ReactGa.initialize('UA-121426505-5')
-        // to report path view
-        ReactGa.pageview(window.location.pathname + window.location.search)
-    },[])
+    // useEffect(()=>{
+    //     ReactGa.initialize('UA-121426505-5')
+    //     // to report path view
+    //     ReactGa.pageview(window.location.pathname + window.location.search)
+    // },[])
     // Tag Manager
     const tagManagerArgs = {
         gtmId: 'GTM-TTF628B'

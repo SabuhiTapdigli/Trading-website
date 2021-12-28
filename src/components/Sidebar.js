@@ -10,7 +10,7 @@ import Visitorcount from './visitor-count/Visitorcount';
 const Sidebar = ({articles,firsturl}) =>{
     // const imgUrl = '../img/logos/';
     const GaEventTracker = useGaEventTracker('Sidebar link')
-    const gclid = sessionStorage.getItem('gclid')
+    // const gclid = sessionStorage.getItem('gclid')
     // for img
     const path = useLocation().pathname;
     const location = path.split("/")[1];
@@ -25,8 +25,8 @@ const Sidebar = ({articles,firsturl}) =>{
                 </div>
             </Sidebartop>
             <Sidebarbottom style={{backgroundImage: `url(../img/${firsturl && firsturl.partnerName}.png)`}} 
-            href={`${firsturl && firsturl.url+gclid}`} target='_blank' rel="noreferrer"
-             onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url+gclid)}>
+            href={`${firsturl && firsturl.url}`} target='_blank' rel="noopener"
+             onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url)}>
             </Sidebarbottom>
             {/* <Allarticles>
                 <h2>Must Reads</h2>
